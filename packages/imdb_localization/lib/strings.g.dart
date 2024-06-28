@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 1
-/// Strings: 1
+/// Strings: 5
 ///
-/// Built on 2024-06-28 at 03:33 UTC
+/// Built on 2024-06-28 at 08:22 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -148,6 +148,30 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 
 	// Translations
 	String get applicationName => 'IMDB';
+	late final _StringsMainRu main = _StringsMainRu._(_root);
+}
+
+// Path: main
+class _StringsMainRu {
+	_StringsMainRu._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	late final _StringsMainTabsRu tabs = _StringsMainTabsRu._(_root);
+}
+
+// Path: main.tabs
+class _StringsMainTabsRu {
+	_StringsMainTabsRu._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get home => 'Home';
+	String get search => 'Search';
+	String get video => 'Video';
+	String get profile => 'Profile';
 }
 
 /// Flat map(s) containing all translations.
@@ -157,6 +181,10 @@ extension on Translations {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
 			case 'applicationName': return 'IMDB';
+			case 'main.tabs.home': return 'Home';
+			case 'main.tabs.search': return 'Search';
+			case 'main.tabs.video': return 'Video';
+			case 'main.tabs.profile': return 'Profile';
 			default: return null;
 		}
 	}
