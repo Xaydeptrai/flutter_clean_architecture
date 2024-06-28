@@ -1,0 +1,14 @@
+targets:
+  $default:
+    builders:
+      slang_build_runner:
+        options:
+          base_locale: ru
+          fallback_strategy: base_locale
+          input_directory: lib
+          input_file_pattern: .il8n.json
+          output_directory: lib
+          output_file_pattern: .g.dart
+          pluralization:
+            auto: cardinal
+

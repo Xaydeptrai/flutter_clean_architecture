@@ -1,0 +1,19 @@
+name: imdb_localization
+description: localization
+
+
+environment:
+  sdk: '>=3.4.3 <4.0.0'
+
+dependencies:
+  slang: ^3.31.1
+  slang_flutter: ^3.31.0
+
+dev_dependencies:
+  thunder_analysis:
+    git:
+      url: https://github.com/khamidjon/thunder-analysis.git
+
+  build_runner: ^2.4.11
+  slang_build_runner: ^3.31.0
+
