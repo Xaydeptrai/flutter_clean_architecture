@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 1
-/// Strings: 5
+/// Strings: 6
 ///
-/// Built on 2024-06-28 at 08:22 UTC
+/// Built on 2024-06-29 at 15:15 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -149,6 +149,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	// Translations
 	String get applicationName => 'IMDB';
 	late final _StringsMainRu main = _StringsMainRu._(_root);
+	late final _StringsHomeRu home = _StringsHomeRu._(_root);
 }
 
 // Path: main
@@ -159,6 +160,16 @@ class _StringsMainRu {
 
 	// Translations
 	late final _StringsMainTabsRu tabs = _StringsMainTabsRu._(_root);
+}
+
+// Path: home
+class _StringsHomeRu {
+	_StringsHomeRu._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get trendingThisWeek => 'Trending this week';
 }
 
 // Path: main.tabs
@@ -185,6 +196,7 @@ extension on Translations {
 			case 'main.tabs.search': return 'Search';
 			case 'main.tabs.video': return 'Video';
 			case 'main.tabs.profile': return 'Profile';
+			case 'home.trendingThisWeek': return 'Trending this week';
 			default: return null;
 		}
 	}
