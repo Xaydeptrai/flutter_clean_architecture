@@ -6,6 +6,9 @@ import 'package:imdb/domain/event/home_event.dart';
 class HomeScreenViewModel{
   void fetchTrendingMovies(BuildContext context){
     context.read<HomeBloc>().add(FetchTrendingMoviesHomeEvent());
+  }
 
+  void fetchTopRatedMovies(BuildContext context){
+    context.read<HomeBloc>().add(FetchTopRatedMoviesHomeEvent());
   }
 }
