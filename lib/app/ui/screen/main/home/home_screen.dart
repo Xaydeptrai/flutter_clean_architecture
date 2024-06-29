@@ -3,7 +3,6 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:imdb/app/ui/screen/main/home/home_screen_view_model.dart';
 import 'package:imdb/domain/bloc/home_bloc.dart';
-import 'package:imdb/domain/entities/movie_data.dart';
 import 'package:imdb/domain/state/home_state.dart';
 import 'package:imdb/library/resource/typography.dart';
 import 'package:imdb_localization/strings.g.dart';
@@ -41,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 32,
             ),
             Padding(
-              padding: EdgeInsets.only(left: 16),
+              padding: const EdgeInsets.only(left: 16),
               child: Text(
                 context.t.home.trendingThisWeek,
                 style: AppTypography.title,
