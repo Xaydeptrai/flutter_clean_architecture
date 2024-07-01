@@ -16,7 +16,7 @@ class MovieItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 140,
+      width: 145,
       height: 315,
       decoration: BoxDecoration(
         color: AppColors.white,
@@ -44,8 +44,8 @@ class MovieItem extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  index.toString(),
-                  style: AppTypography.text,
+                  movieData.releaseDate,
+                  style: AppTypography.smallText,
                 ),
                 const SizedBox(height: 2,),
                 Row(
@@ -56,7 +56,7 @@ class MovieItem extends StatelessWidget {
                     ),
                     const SizedBox(width: 2,),
                     Text(
-                      movieData.rating.toString(),
+                      movieData.rating.toStringAsFixed(1),
                       style: AppTypography.smallText2,
                     )
                   ],

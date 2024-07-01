@@ -6,6 +6,7 @@ class MovieData with EquatableMixin {
   final String title;
   final double rating;
   final String posterUrl;
+  final String releaseDate;
 
 
   const MovieData({
@@ -13,6 +14,7 @@ class MovieData with EquatableMixin {
     required this.title,
     required this.rating,
     required this.posterUrl,
+    required this.releaseDate,
   });
 
   @override
@@ -20,7 +22,8 @@ class MovieData with EquatableMixin {
     id,
     title,
     rating,
-    posterUrl
+    posterUrl,
+    releaseDate,
   ];
 
 }

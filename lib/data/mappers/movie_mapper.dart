@@ -8,5 +8,6 @@ extension MovieMapper on MovieResponse {
       title: title,
       rating: voteAverage,
       posterUrl: AppUtils.addBaseImageUrl(posterPath),
+      releaseDate: AppUtils.formatDate(AppUtils.parseDateString(releaseDate)),
   );
 }

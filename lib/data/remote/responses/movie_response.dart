@@ -8,12 +8,14 @@ class MovieResponse {
   final String title;
   final double voteAverage;
   final String posterPath;
+  final String releaseDate;
 
   const MovieResponse(
     this.id,
     this.title,
     this.voteAverage,
-    this.posterPath
+    this.posterPath,
+    this.releaseDate,
   );
 
   factory MovieResponse.fromJson(Map<String, dynamic> json) =>
