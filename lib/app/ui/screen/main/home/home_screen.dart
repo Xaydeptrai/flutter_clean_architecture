@@ -31,6 +31,8 @@ class _HomeScreenState extends State<HomeScreen> {
     SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
       widget.viewModel.fetchTrendingMovies(context);
       widget.viewModel.fetchTopRatedMovies(context);
+      widget.viewModel.fetchPopularMovies(context);
+
     });
   }
 
@@ -46,6 +48,8 @@ class _HomeScreenState extends State<HomeScreen> {
               _TrendingMoviesWidget(),
               SizedBox(height: 24,),
               _TopRatedMoviesWidget(),
+              SizedBox(height: 24,),
+              _PopularMoviesWidget(),
               SizedBox(height: 24,),
             ],
           ),
@@ -128,6 +132,58 @@ class _TopRatedMoviesWidget extends StatelessWidget {
             buildWhen: (_, state) => state is TopRatedMoviesHomeState,
             builder: (context, state) {
               if (state is FetchedTopRatedMoviesHomeState) {
+                return ListView.separated(
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  separatorBuilder: (_, __) => const SizedBox(width: 8),
+                  itemCount: state.movies.length,
+                  itemBuilder: (_, index) {
+                    final movie = state.movies[index];
+                    return Row(
+                      children: [
+                        if(index == 0) const SizedBox(width: 16,),
+                        MovieItem(
+                            movieData: movie,
+                            index: index + 1
+                        ),
+                        if(index == state.movies.length - 1) const SizedBox(width: 16,),
+                      ],
+                    );
+                  },
+                );
+              }
+              return const Center(
+                child: CircularProgressIndicator(),
+              );
+            },
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _PopularMoviesWidget extends StatelessWidget {
+  const _PopularMoviesWidget();
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(left: 16),
+          child: Text(
+            context.t.home.popular,
+            style: AppTypography.title,
+          ),
+        ),
+        SizedBox(
+          height: _catelogyHeight,
+          child: BlocBuilder<HomeBloc, HomeState>(
+            buildWhen: (_, state) => state is PopularMoviesHomeState,
+            builder: (context, state) {
+              if (state is FetchedPopularMoviesHomeState) {
                 return ListView.separated(
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,

@@ -28,4 +28,12 @@ class MovieRepositoryIml implements MovieRepository {
     return data;
   }
 
+  @override
+  Future<List<MovieData>> getPopularMovies() async {
+    final paginatedResponse = await _movieApi.getPopularMovies();
+    final movies = paginatedResponse.results;
+    final data = movies.map((movie) => movie.toData()).toList();
+    return data;
+  }
+
 }

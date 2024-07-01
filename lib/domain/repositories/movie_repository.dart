@@ -5,4 +5,8 @@ abstract class MovieRepository {
 
   Future<List<MovieData>> getTopRatedMovies();
 
+  Future<List<MovieData>> getPopularMovies();
+
+
+
 }

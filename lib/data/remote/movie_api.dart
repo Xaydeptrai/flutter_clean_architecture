@@ -19,4 +19,9 @@ abstract class MovieApi {
 
   @GET('/movie/top_rated')
   Future<PaginatedResponse<MovieResponse>> getTopRatedMovies();
+
+  @GET('/movie/popular')
+  Future<PaginatedResponse<MovieResponse>> getPopularMovies();
+
+
 }

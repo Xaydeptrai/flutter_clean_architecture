@@ -37,3 +37,19 @@ class FetchedTopRatedMoviesHomeState extends TopRatedMoviesHomeState {
   @override
   List<Object?> get props => [movies];
 }
+
+
+sealed class PopularMoviesHomeState extends HomeState {}
+
+class FetchingPopularMoviesHomeState extends PopularMoviesHomeState {}
+
+class FetchFailPopularMoviesHomeState extends PopularMoviesHomeState {}
+
+class FetchedPopularMoviesHomeState extends PopularMoviesHomeState {
+  FetchedPopularMoviesHomeState(this.movies);
+
+  final List<MovieData> movies;
+
+  @override
+  List<Object?> get props => [movies];
+}

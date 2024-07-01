@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 1
-/// Strings: 7
+/// Strings: 8
 ///
-/// Built on 2024-06-29 at 16:34 UTC
+/// Built on 2024-07-01 at 01:26 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -171,6 +171,7 @@ class _StringsHomeRu {
 	// Translations
 	String get trendingThisWeek => 'Trending this week';
 	String get topRated => 'Top Rated';
+	String get popular => 'Popular Movies';
 }
 
 // Path: main.tabs
@@ -199,6 +200,7 @@ extension on Translations {
 			case 'main.tabs.profile': return 'Profile';
 			case 'home.trendingThisWeek': return 'Trending this week';
 			case 'home.topRated': return 'Top Rated';
+			case 'home.popular': return 'Popular Movies';
 			default: return null;
 		}
 	}

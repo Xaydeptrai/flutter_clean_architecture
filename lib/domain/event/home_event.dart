@@ -9,3 +9,5 @@ sealed class HomeEvent with EquatableMixin {
 class FetchTrendingMoviesHomeEvent extends HomeEvent {}
 
 class FetchTopRatedMoviesHomeEvent extends HomeEvent {}
+
+class FetchPopularMoviesHomeEvent extends HomeEvent{}
