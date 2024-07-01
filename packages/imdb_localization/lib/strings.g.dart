@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 1
-/// Strings: 8
+/// Strings: 17
 ///
-/// Built on 2024-07-01 at 01:26 UTC
+/// Built on 2024-07-01 at 03:21 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -150,6 +150,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	String get applicationName => 'IMDB';
 	late final _StringsMainRu main = _StringsMainRu._(_root);
 	late final _StringsHomeRu home = _StringsHomeRu._(_root);
+	late final _StringsSearchRu search = _StringsSearchRu._(_root);
 }
 
 // Path: main
@@ -174,6 +175,18 @@ class _StringsHomeRu {
 	String get popular => 'Popular Movies';
 }
 
+// Path: search
+class _StringsSearchRu {
+	_StringsSearchRu._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get searchHint => 'Search IMDb';
+	late final _StringsSearchTabsRu tabs = _StringsSearchTabsRu._(_root);
+	late final _StringsSearchBrowseRu browse = _StringsSearchBrowseRu._(_root);
+}
+
 // Path: main.tabs
 class _StringsMainTabsRu {
 	_StringsMainTabsRu._(this._root);
@@ -185,6 +198,32 @@ class _StringsMainTabsRu {
 	String get search => 'Search';
 	String get video => 'Video';
 	String get profile => 'Profile';
+}
+
+// Path: search.tabs
+class _StringsSearchTabsRu {
+	_StringsSearchTabsRu._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get browse => 'Browse';
+	String get streaming => 'Streaming';
+	String get comingSoon => 'Coming soon';
+	String get inTheaters => 'In theaters';
+}
+
+// Path: search.browse
+class _StringsSearchBrowseRu {
+	_StringsSearchBrowseRu._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get popular => 'Popular interests';
+	String get movies => 'Movies';
+	String get shows => 'Shows';
+	String get trailers => 'Trailers';
 }
 
 /// Flat map(s) containing all translations.
@@ -201,6 +240,15 @@ extension on Translations {
 			case 'home.trendingThisWeek': return 'Trending this week';
 			case 'home.topRated': return 'Top Rated';
 			case 'home.popular': return 'Popular Movies';
+			case 'search.searchHint': return 'Search IMDb';
+			case 'search.tabs.browse': return 'Browse';
+			case 'search.tabs.streaming': return 'Streaming';
+			case 'search.tabs.comingSoon': return 'Coming soon';
+			case 'search.tabs.inTheaters': return 'In theaters';
+			case 'search.browse.popular': return 'Popular interests';
+			case 'search.browse.movies': return 'Movies';
+			case 'search.browse.shows': return 'Shows';
+			case 'search.browse.trailers': return 'Trailers';
 			default: return null;
 		}
 	}

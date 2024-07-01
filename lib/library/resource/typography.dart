@@ -28,4 +28,11 @@ class AppTypography {
   );
 
   static final smallText2 = smallText.copyWith(color: AppColors.grey);
+
+  static const bigText = TextStyle(
+    fontSize: 24,
+    height: 26/22,
+    fontWeight: FontWeight.w500,
+    color: AppColors.black,
+  );
 }

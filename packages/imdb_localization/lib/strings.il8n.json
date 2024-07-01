@@ -12,5 +12,21 @@
     "trendingThisWeek" : "Trending this week",
     "topRated" : "Top Rated",
     "popular" : "Popular Movies"
+  },
+  "search": {
+    "searchHint": "Search IMDb",
+    "tabs": {
+      "browse": "Browse",
+      "streaming": "Streaming",
+      "comingSoon": "Coming soon",
+      "inTheaters": "In theaters"
+    },
+    "browse": {
+      "popular": "Popular interests",
+      "movies": "Movies",
+      "shows": "Shows",
+      "trailers": "Trailers"
+    }
+
   }
 }

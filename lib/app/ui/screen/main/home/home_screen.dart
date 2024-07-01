@@ -32,7 +32,6 @@ class _HomeScreenState extends State<HomeScreen> {
       widget.viewModel.fetchTrendingMovies(context);
       widget.viewModel.fetchTopRatedMovies(context);
       widget.viewModel.fetchPopularMovies(context);
-
     });
   }
 
