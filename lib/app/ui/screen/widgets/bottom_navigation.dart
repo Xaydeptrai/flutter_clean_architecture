@@ -4,10 +4,13 @@ import 'package:imdb_localization/strings.g.dart';
 class IMDBBottomNavigationBar extends StatefulWidget {
   const IMDBBottomNavigationBar({
     required this.pageController,
+    required this.currentIndex,
     super.key,
   });
 
   final PageController pageController;
+  final int currentIndex;
+
 
   @override
   State<IMDBBottomNavigationBar> createState() =>
@@ -16,7 +19,6 @@ class IMDBBottomNavigationBar extends StatefulWidget {
 
 class IMDBBottomNavigationBarState extends State<IMDBBottomNavigationBar> {
 
-  var _currentPageIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -25,13 +27,12 @@ class IMDBBottomNavigationBarState extends State<IMDBBottomNavigationBar> {
       unselectedItemColor: Colors.grey,
       showSelectedLabels: true,
       type: BottomNavigationBarType.fixed,
-      currentIndex: _currentPageIndex,
+      currentIndex: widget.currentIndex,
+
       onTap: (index){
         widget.pageController.jumpToPage(index);
-        setState(() {
-          _currentPageIndex = index;
-        });
       },
+
       items:[
         BottomNavigationBarItem(
           icon: const Icon(Icons.home),

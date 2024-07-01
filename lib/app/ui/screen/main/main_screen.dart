@@ -22,6 +22,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
 
   final _pageController = PageController(initialPage: 0);
+  var _currentPageIndex = 0;
 
   @override
   void dispose() {
@@ -34,6 +35,7 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       body: PageView(
         controller: _pageController,
+        onPageChanged: (index) => setState(() => _currentPageIndex = index),
         children: [
           HomeScreen(viewModel: HomeScreenViewModel()),
           const SearchScreen(),
@@ -43,6 +45,7 @@ class _MainScreenState extends State<MainScreen> {
       ),
       bottomNavigationBar: IMDBBottomNavigationBar(
         pageController: _pageController,
+        currentIndex: _currentPageIndex,
       ),
     );
   }
